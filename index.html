@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgenciaPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow z-50">
+        <div class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+            <h1 class="font-bold text-xl">AgenciaPro</h1>
+            <div class="space-x-6 hidden md:block">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="text-center py-32 px-6 bg-gradient-to-r from-blue-50 to-white">
+        <h2 class="text-5xl font-bold mb-4 fade-in">Creamos soluciones digitales que venden</h2>
+        <p class="mb-6 max-w-xl mx-auto fade-in">Más de 120 empresas han incrementado sus ventas con nuestras soluciones
+            tecnológicas y estrategias digitales.</p>
+        <button onclick="scrollToContact()"
+            class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:scale-105 transition fade-in">Solicitar asesoría
+            gratuita</button>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 bg-white text-center">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="fade-in">
+                <h3 class="text-4xl font-bold text-blue-600">+120</h3>
+                <p>Clientes satisfechos</p>
+            </div>
+            <div class="fade-in">
+                <h3 class="text-4xl font-bold text-blue-600">+300%</h3>
+                <p>Crecimiento promedio</p>
+            </div>
+            <div class="fade-in">
+                <h3 class="text-4xl font-bold text-blue-600">5 años</h3>
+                <p>Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="bg-gray-50 py-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition fade-in">
+                <h3 class="font-bold text-xl mb-2">Desarrollo Web</h3>
+                <p>Landing pages, ecommerce y sistemas personalizados optimizados para conversión.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition fade-in">
+                <h3 class="font-bold text-xl mb-2">Automatización</h3>
+                <p>Automatizamos procesos para ahorrar tiempo y aumentar productividad.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition fade-in">
+                <h3 class="font-bold text-xl mb-2">Marketing Digital</h3>
+                <p>Publicidad en redes, funnels y estrategias de conversión.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="py-20 text-center max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6 fade-in">¿Quiénes somos?</h2>
+        <p class="fade-in">Somos una agencia digital enfocada en resultados. Nuestro equipo está formado por
+            desarrolladores, diseñadores y estrategas que trabajan para hacer crecer negocios a través de la tecnología.
+        </p>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 text-center bg-gray-50">
+        <h2 class="text-3xl font-bold mb-10 fade-in">Clientes felices</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+            <div class="p-6 border rounded-xl fade-in">"Aumentamos nuestras ventas un 250% en 3 meses." - Juan Pérez
+            </div>
+            <div class="p-6 border rounded-xl fade-in">"Nos automatizaron todo el proceso de ventas." - Laura Gómez
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-blue-600 text-white text-center py-16 fade-in">
+        <h2 class="text-3xl font-bold mb-4">¿Listo para escalar tu negocio?</h2>
+        <button onclick="scrollToContact()"
+            class="bg-white text-blue-600 px-6 py-3 rounded-xl hover:scale-105 transition">Agenda una llamada</button>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 text-center">
+        <h2 class="text-3xl font-bold mb-6 fade-in">Contáctanos</h2>
+        <form class="max-w-md mx-auto space-y-4 fade-in" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Nombre" class="w-full border p-3 rounded" required>
+            <input type="email" placeholder="Correo" class="w-full border p-3 rounded" required>
+            <textarea placeholder="Cuéntanos tu proyecto" class="w-full border p-3 rounded" required></textarea>
+            <button class="bg-blue-600 text-white px-6 py-3 rounded-xl w-full">Enviar</button>
+        </form>
+        <p id="successMsg" class="text-green-600 mt-4 hidden">Mensaje enviado correctamente ✔</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm bg-gray-100">
+        © 2026 AgenciaPro - contacto@agenciapro.com | +52 833 123 4567
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('successMsg').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+
+</body>
+
+</html>
